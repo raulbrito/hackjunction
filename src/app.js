@@ -30,7 +30,12 @@ var ajax = require('ajax');
         url:'http://hackjunction.ngrok.io/hooks/pebble?name=' + data[0],
         type:'json'
       }, function(data) {
-        console.log("ordered something"); 
+         var result_text = "Your order " + data + " is ready in 5 minutes!";
+         new UI.Card({
+           title: 'Awesome Renny!',
+            body: result_text
+           }).show();
+
       }, function(error) {
         console.log("error ordering"); 
       })
@@ -42,7 +47,11 @@ var ajax = require('ajax');
         url:'http://hackjunction.ngrok.io/hooks/pebble?name=' + data[1],
         type:'json'
       }, function(data) {
-        console.log("ordered"); 
+         var result_text = "Your order " + data + " is ready in 5 minutes!";
+         new UI.Card({
+           title: 'Awesome Renny!',
+            body: result_text
+           }).show(); 
       }, function(error) {
         console.log("error ordering"); 
       })
